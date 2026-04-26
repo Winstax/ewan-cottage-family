@@ -37,18 +37,28 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
     flex: 1;
     justify-content: center;
 }
 
-.navbar ul li a:hover {
-    color: #c59b3b;
+.navbar ul li a {
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #c59b3b;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
 }
 
 .book-btn {
